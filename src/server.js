@@ -2,7 +2,7 @@ import express from 'express';
 import {renderToString} from 'react-dom/server';
 import App from './App';
 
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.static('dist/public'));
 app.get('/{*splat}', (req, res) => {
@@ -23,6 +23,6 @@ app.get('/{*splat}', (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server is running on http://localhost:3000");
 });
